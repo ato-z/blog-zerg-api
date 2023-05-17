@@ -5,6 +5,7 @@
     /* Language and Environment */
     "target": "ES2021" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "lib": ["ES2021"],
+    "types": ["@cloudflare/workers-types"],
     /* Modules */
     "module": "commonjs" /* Specify what module code is generated. */,
 
@@ -37,5 +38,7 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": ["src/**/**.ts"],
+  "exclude": ["node_modules"]
 }

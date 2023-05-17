@@ -1,0 +1,5 @@
+# 脚本生成的配置文件，请勿修改
+name = "blog-api-master"
+main = "index.ts"
+compatibility_date = "2023-05-17"
+kv_namespaces = [{"binding"="BLOG_DATABASE","id"="72a58932318a4c77ac6c6675123761f1"},{"binding"="BLOG_DATASTORE","id"="459864120f0144b7943e403b1b3b9ba5"}]
