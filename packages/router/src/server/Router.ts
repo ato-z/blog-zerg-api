@@ -49,12 +49,14 @@ export const PATCH = vers('PATCH');
 
 export class Router<T extends new () => unknown> {
   protected prefix: string;
-  protected loader: T[] = [];
+  protected controller: T[] = [];
   protected routerMap = new Map<string, RouteFn>();
-  constructor(option: { prefix?: string; loader?: T[] } = { loader: [] }) {
-    const { prefix, loader } = option;
+  constructor(
+    option: { prefix?: string; controller?: T[] } = { controller: [] },
+  ) {
+    const { prefix, controller } = option;
     this.prefix = (prefix ?? '').replace(/^\/+|\/+$/g, '');
-    this.loader = loader!;
+    this.controller = controller!;
     this.instancLoader();
   }
 
@@ -75,8 +77,8 @@ export class Router<T extends new () => unknown> {
   }
 
   private instancLoader() {
-    const { loader, prefix, routerMap } = this;
-    loader.forEach(_class => {
+    const { controller, prefix, routerMap } = this;
+    controller.forEach(_class => {
       this.loaderEach(prefix, _class, routerMap);
     });
   }
