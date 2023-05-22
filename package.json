@@ -19,5 +19,9 @@
     "toml": "^3.0.0",
     "typescript": "^5.0.4",
     "wrangler": "^2.20.0"
+  },
+  "dependencies": {
+    "@atoz/router": "link:packages/router",
+    "@atoz/tool": "link:packages/tool"
   }
 }
