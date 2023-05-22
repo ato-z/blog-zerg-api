@@ -13,7 +13,12 @@ const modulePaths = path.resolve(srcPath, 'modules');
 const modules = fs.readdirSync(modulePaths);
 const compatibilityDate = '2023-05-17';
 
-const deployAModule = (moduleName) => {
+const deployAModule = moduleName => {
+  // 如果为.开头，则跳过
+  if (/^\./.test(moduleName)) {
+    return undefined;
+  }
+
   // eslint-disable-next-line camelcase
   const { name, kv_namespaces } = wranglerConfig;
   const deployName = `${name}-${moduleName}`;
