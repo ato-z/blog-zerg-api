@@ -41,6 +41,4 @@ if (wranglerConfig.compatibilityDate === null) {
   saveConfig({ compatibilityDate });
 }
 
-checkDataBase(wranglerConfig.database);
-
-module.exports = { wranglerConfig, saveConfig };
+module.exports = { wranglerConfig, saveConfig, checkDataBase };

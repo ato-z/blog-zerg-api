@@ -1,5 +1,10 @@
 {
   "name": "blog-api",
   "compatibilityDate": "2023-05-26",
-  "database": { "BLOG_DATABASE": null }
+  "database": {
+    "BLOG_DATABASE": {
+      "id": "c9e55af39ec74825b5a24b98f0a81a94",
+      "preview_id": "c9e55af39ec74825b5a24b98f0a81a94"
+    }
+  }
 }
