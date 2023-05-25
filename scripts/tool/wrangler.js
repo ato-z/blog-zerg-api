@@ -1,23 +1,19 @@
-const toml = require('toml');
 const fs = require('fs');
 const path = require('path');
+const { wranglerConfig } = require('./configProxy');
 
 const compatibilityDate = '2023-05-17';
 
 const root = path.resolve(__dirname, '../..');
 const srcPath = path.resolve(root, 'src');
-const configPath = path.resolve(root, 'wrangler.toml');
-const someTomlString = fs.readFileSync(configPath);
-const wranglerConfig = toml.parse(someTomlString);
 
 const modulePaths = path.resolve(srcPath, 'modules');
 
 const touchConfigByToml = moduleName => {
-  // eslint-disable-next-line camelcase
-  const { name, kv_namespaces } = wranglerConfig;
+  const { name, database } = wranglerConfig;
   const deployName = `${name}-${moduleName}`;
-  const deployKv = JSON.stringify(kv_namespaces).replace(/:/g, '=');
-  const wranglerToml = `# 脚本生成的配置文件，请勿修改
+  const deployKv = JSON.stringify(database).replace(/:/g, '=');
+  const wranglerToml = `# 脚本生成的配置文件
 name = "${deployName}"
 main = "index.ts"
 compatibility_date = "${compatibilityDate}"

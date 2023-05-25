@@ -1,0 +1,5 @@
+{
+  "name": "blog-api",
+  "compatibilityDate": "2023-05-26",
+  "database": { "BLOG_DATABASE": null }
+}
