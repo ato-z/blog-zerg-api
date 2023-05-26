@@ -22,4 +22,4 @@ const moduleDirs = modules.filter(moduleName => {
   }
 });
 
-module.exports = { moduleDirs };
+module.exports = { moduleDirs, root, srcPath, modulePaths };
