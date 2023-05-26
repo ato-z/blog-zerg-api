@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "database:init": "node scripts/database-init.js",
-    "dev": "node scripts/deploy.js",
+    "dev": "node scripts/dev.js",
     "deploy:all": "node scripts/deploy.js"
   },
   "keywords": [],

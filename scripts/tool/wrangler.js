@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { wranglerConfig } = require('./configProxy');
 
-const compatibilityDate = '2023-05-17';
+const { compatibilityDate } = wranglerConfig;
 
 const root = path.resolve(__dirname, '../..');
 const srcPath = path.resolve(root, 'src');
@@ -12,8 +12,10 @@ const modulePaths = path.resolve(srcPath, 'modules');
 const touchConfigByToml = moduleName => {
   const { name, database } = wranglerConfig;
   const deployName = `${name}-${moduleName}`;
-  const deployKv = JSON.stringify(database).replace(/:/g, '=');
-  const wranglerToml = `# 脚本生成的配置文件
+  const deployKv = JSON.stringify(
+    Object.keys(database).map(binding => ({ binding, ...database[binding] })),
+  ).replace(/:/g, '=');
+  const wranglerToml = `# kv 配置项将跟随 src/config/wrangler.json 改变
 name = "${deployName}"
 main = "index.ts"
 compatibility_date = "${compatibilityDate}"
