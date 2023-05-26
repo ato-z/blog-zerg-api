@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /**
  * Welcome to Cloudflare Workers! This is your first worker.
  *
@@ -7,17 +8,11 @@
  *
  * Learn more at https://developers.cloudflare.com/workers/
  */
-declare type Env = KVEnv & {
+
+// 禁止修改，该类型由脚本维护
+declare type KVEnv = {
   // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
   // MY_KV_NAMESPACE: KVNamespace
   // KV_EXCEPTION: KVNamespace;
-  //
-  // Example binding to Durable Object. Learn more at https://developers.cloudflare.com/workers/runtime-apis/durable-objects/
-  // MY_DURABLE_OBJECT: DurableObjectNamespace
-  //
-  // Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
-  // MY_BUCKET: R2Bucket
+  BLOG_DATABASE: KVNamespace;
 };
-
-// These initial Types are based on bindings that don't exist in the project yet,
-// you can follow the links to learn how to implement them.

@@ -1,5 +1,5 @@
 # kv 配置项将跟随 src/config/wrangler.json 改变
-name = "blog-api-master"
-main = "index.ts"
-compatibility_date = "2023-05-26"
-kv_namespaces = [{"binding"="BLOG_DATABASE","id"="c9e55af39ec74825b5a24b98f0a81a94","preview_id"="c9e55af39ec74825b5a24b98f0a81a94"}]
+name="blog-api-master"
+main="index.ts"
+compatibility_date="2023-05-26"
+kv_namespaces=[{binding="BLOG_DATABASE",id="c9e55af39ec74825b5a24b98f0a81a94",preview_id="c9e55af39ec74825b5a24b98f0a81a94"}]
