@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "database:align": "node scripts/database-align.js",
     "database:init": "node scripts/database-init.js",
     "dev": "node scripts/dev.js",
     "deploy:all": "node scripts/deploy.js"
