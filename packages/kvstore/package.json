@@ -1,0 +1,9 @@
+{
+  "name": "@atoz/kvstore",
+  "version": "1.0.0",
+  "description": "📬 kv 操作",
+  "main": "src/index.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

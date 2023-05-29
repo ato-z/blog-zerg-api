@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@atoz/kvstore': link:packages/kvstore
   '@atoz/router': link:packages/router
   '@atoz/tool': link:packages/tool
   '@cloudflare/workers-types': ^4.20230511.0
@@ -18,6 +19,7 @@ specifiers:
   wrangler: ^2.20.0
 
 dependencies:
+  '@atoz/kvstore': link:packages/kvstore
   '@atoz/router': link:packages/router
   '@atoz/tool': link:packages/tool
 
