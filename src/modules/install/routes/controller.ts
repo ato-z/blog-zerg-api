@@ -4,8 +4,7 @@ import { ServiceDataBase } from '@/modules/install/service/database';
 
 @Group('/install')
 export class Install {
-  @GET('todo')
-  todo() {
+  @GET('todo') todo() {
     return resultSuccess('ok', [
       {
         title: '初始数据',
@@ -18,15 +17,19 @@ export class Install {
     ]);
   }
 
-  @GET('/database')
-  async index(ctx: Context) {
+  @GET('try') async try(ctx: Context) {
+    const serviceDataBase = new ServiceDataBase(ctx.env);
+    await serviceDataBase.try();
+    return resultSuccess('ok');
+  }
+
+  @GET('/database') async index(ctx: Context) {
     const serviceDataBase = new ServiceDataBase(ctx.env);
     await serviceDataBase.install();
     return resultSuccess('数据初始化完成');
   }
 
-  @GET('/account')
-  async account(ctx: Context) {
+  @GET('/account') async account(ctx: Context) {
     const serviceDataBase = new ServiceDataBase(ctx.env);
     await serviceDataBase.withAccount();
     return resultSuccess('管理员账户已创建');
