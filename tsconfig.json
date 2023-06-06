@@ -6,6 +6,7 @@
     "target": "ES2021" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "lib": ["ES2021"],
     "types": ["@cloudflare/workers-types"],
+
     /* Modules */
     "module": "commonjs" /* Specify what module code is generated. */,
 
@@ -36,12 +37,18 @@
     "allowUnusedLabels": true /* Disable error reporting for unused labels. */,
     "allowUnreachableCode": true /* Disable error reporting for unreachable code. */,
 
+    // 路径别名
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "./types/*.d.ts",
+    "./types/**.d.ts",
+    "./types/**/**.d.ts",
     "packages/**/**.ts",
     "packages/**/**/**.ts",
     "src/**/**.ts"

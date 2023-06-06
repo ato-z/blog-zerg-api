@@ -2,4 +2,4 @@
 name="blog-api-master"
 main="index.ts"
 compatibility_date="2023-05-26"
-kv_namespaces=[{binding="BLOG_DATABASE",id="c9e55af39ec74825b5a24b98f0a81a94",preview_id="c9e55af39ec74825b5a24b98f0a81a94"}]
+kv_namespaces=[{binding="BLOG_DATABASE",id="c9e55af39ec74825b5a24b98f0a81a94",preview_id="c9e55af39ec74825b5a24b98f0a81a94"},{binding="BLOG_MANAGEMENT",id="3ef5cd2aeb4743a7885579239573b88c",preview_id="3ef5cd2aeb4743a7885579239573b88c"}]
