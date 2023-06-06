@@ -1,6 +1,6 @@
 import { createApp } from '@/helper/createApp';
-import { router } from './routes/v1';
+import { router as routerV1 } from './v1';
 
-const app = createApp(router);
+const app = createApp(routerV1);
 
 export default app;

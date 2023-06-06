@@ -1,6 +1,6 @@
 import { type Context, GET, Group } from '@atoz/router';
 import { resultSuccess } from '@/helper/functions';
-import { ServiceDataBase } from '@/modules/install/service/database';
+import { ServiceDataBase } from './services/database';
 
 @Group('/install')
 export class Install {
