@@ -54,7 +54,7 @@ export class Context {
       return {};
     }
 
-    const clone = request.clone();
+    const clone = new Response(request.body, request);
     const contentType: string =
       headers.get('content-type') ??
       headers.get('Content-Type') ??
