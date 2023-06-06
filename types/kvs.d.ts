@@ -15,4 +15,5 @@ declare type KVEnv = {
   // MY_KV_NAMESPACE: KVNamespace
   // KV_EXCEPTION: KVNamespace;
   BLOG_DATABASE: KVNamespace;
+  BLOG_MANAGEMENT: KVNamespace;
 };
