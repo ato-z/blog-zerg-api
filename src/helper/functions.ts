@@ -72,3 +72,21 @@ export const date = function (dateString: string, _date?: Date): string {
   });
   return dateString;
 };
+
+/**
+ * 断言函数，如果具有length则为字符串或者数组
+ */
+export const withLength = <T extends { length: number } & string>(
+  target: any,
+): target is T => {
+  try {
+    if (typeof target === 'string') {
+      return true;
+    }
+
+    const length: unknown = Reflect.get(target, 'length');
+    return typeof length === 'number';
+  } catch {
+    return false;
+  }
+};
