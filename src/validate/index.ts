@@ -1,4 +1,4 @@
-import { BaseException } from '@/exception';
+import { ExceptionParam } from '@/exception';
 import * as methods from './method';
 
 type Methods = typeof methods;
@@ -19,7 +19,7 @@ type RuleParam<T> = Array<{
 export class Validate<T extends {}> {
   constructor(protected target: T, protected readonly rule: RuleParam<T>) {}
 
-  async check() {
+  check() {
     const { rule, target } = this;
     const keys = Object.keys(target);
     const inRule: Array<[unknown, RuleMap]> = [];
@@ -33,11 +33,11 @@ export class Validate<T extends {}> {
       inRule.push([value, curRule.rule]);
     }
 
-    await this.checkItems(inRule);
+    this.checkItems(inRule);
   }
 
-  private async checkItems(inRule: Array<[unknown, RuleMap]>) {
-    const trigger = async () => {
+  private checkItems(inRule: Array<[unknown, RuleMap]>) {
+    const trigger = () => {
       const cur = inRule.shift();
       if (cur === undefined) {
         return undefined;
@@ -45,15 +45,15 @@ export class Validate<T extends {}> {
 
       const [value, rule] = cur;
 
-      await this.checkItem(value, rule);
+      this.checkItem(value, rule);
 
-      await trigger();
+      trigger();
     };
 
-    await trigger();
+    trigger();
   }
 
-  private async checkItem(value: unknown, rule: RuleMap) {
+  private checkItem(value: unknown, rule: RuleMap) {
     const keys = Object.keys(rule) as Array<keyof Methods>;
 
     const trigger = () => {
@@ -69,7 +69,7 @@ export class Validate<T extends {}> {
 
       if (typeof result === 'string') {
         const msg = alertMsg.replace('$msg', result);
-        throw new BaseException(msg);
+        throw new ExceptionParam(msg);
       }
 
       trigger();
