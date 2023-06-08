@@ -1,5 +1,5 @@
 import { DataBase, KvStore } from '@atoz/kvstore';
-import { admin as configAdmin } from '@/config/admin';
+import { management as configManagement } from '@/config/management';
 import { date } from '@/helper/functions';
 import { ServiceManagement } from '@/service/Management';
 import { ExceptionUninitialized } from '@/exception';
@@ -27,8 +27,8 @@ export class ServiceDataBase {
    */
   async try() {
     const { management } = this;
-    const admin = await management.get(configAdmin.name);
-    if (admin === null) {
+    const find = await management.get(configManagement.name);
+    if (find === null) {
       throw new ExceptionUninitialized();
     }
   }
@@ -52,7 +52,7 @@ export class ServiceDataBase {
    */
   async withAccount() {
     const { management } = this;
-    const { name, password, level } = configAdmin;
+    const { name, password, level, nickname } = configManagement;
     const status = 1;
     const codePassword = ServiceManagement.encodePassword(
       name,
@@ -64,10 +64,9 @@ export class ServiceDataBase {
       {
         cover,
         password: codePassword,
-        status,
         createDate: date('y-m-d h:i:s'),
       },
-      { name, level, password },
+      { name, level, password, nickname, status, cover: 0 },
     );
   }
 }
