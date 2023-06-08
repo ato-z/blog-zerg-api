@@ -26,3 +26,14 @@ export class BaseException extends Error {
     return response;
   }
 }
+
+/**
+ * 参数异常
+ */
+export class ExceptionParam extends BaseException {
+  override status = 400;
+  override errorCode = 1000;
+  constructor(public override message: string = '参数异常') {
+    super(message);
+  }
+}
