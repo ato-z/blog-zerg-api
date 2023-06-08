@@ -1,11 +1,11 @@
 import { partRouter, partParams, partMultipartFormData } from '@atoz/tool';
 
 export class Context {
-  protected domain: string;
-  protected url: string;
-  protected params: unknown;
-  protected headers: Request['headers'];
-  protected method: string;
+  public domain: string;
+  public url: string;
+  public params: unknown;
+  public headers: Request['headers'];
+  public method: string;
 
   private _body: unknown = null;
 
