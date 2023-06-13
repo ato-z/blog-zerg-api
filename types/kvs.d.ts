@@ -14,6 +14,7 @@ declare type KVEnv = {
   // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
   // MY_KV_NAMESPACE: KVNamespace
   // KV_EXCEPTION: KVNamespace;
+  BLOG_TMP: KVNamespace;
   BLOG_DATABASE: KVNamespace;
   BLOG_MANAGEMENT: KVNamespace;
 };
