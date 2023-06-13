@@ -11,7 +11,8 @@
       "rules": {
         "@typescript-eslint/ban-types": "off",
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/object-curly-spacing": "off"
+        "@typescript-eslint/object-curly-spacing": "off",
+        "no-mixed-operators": "off"
       }
     }
   ],
